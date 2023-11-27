@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div id="google-container">
+    <img id="google-logo" src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_light_color_92x30dp.png" alt="Google Logo">
+    <form id="search-form" onsubmit="return googleSearch()">
+        <div id="search-box">
+            <input id="search-input" type="text" placeholder="Google'da Ara">
+            
+            <button type="submit" id="search-button">Google'da Ara</button>
+            
+            <button type="button" id="additional-button" onclick="feelingLucky()">Kendimi Şanslı Hissediyorum</button>
+        </div>
+    </form>
+</div>
+
+<script>
+    function googleSearch() {
+        var query = document.getElementById('search-input').value;
+        
+        window.location.href = "https://www.google.com/search?q=" + encodeURIComponent(query);
+        alert('Google\'da arama yapılacak: ' + query);
+        return false; // Formun gerçek bir submit işlemi yapmasını engelliyoruz
+    }
+
+    function feelingLucky() {
+        // "Kendimi Şanslı Hissediyorum" butonuna tıklandığında yapılacak işlemleri burada ekleyebilirsiniz
+        alert('Kendimi Şanslı Hissediyorum butonuna tıklandı!');
+    }
+</script>
+
+</body>
+</html>
